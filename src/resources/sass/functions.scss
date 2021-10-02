@@ -1,0 +1,4 @@
+/*Función que convierte pixeles a vw*/
+@function convertPixelsToV($pixeles: 1, $resolucion: 1519, $unidad:1vw){
+    @return ($pixeles * 100) / $resolucion *$unidad;
+}
