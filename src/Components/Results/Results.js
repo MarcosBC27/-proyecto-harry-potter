@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 import './Results.scss';
 
 
-const Results = ({list}) => {
+const Results = ({ list }) => {
 
     return (
         <div className="results-container">
@@ -17,6 +18,10 @@ const Results = ({list}) => {
             }
         </div>
     );
+};
+
+Results.propTypes = {
+    list: PropTypes.array.isRequired,
 };
 
 export default Results;

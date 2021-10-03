@@ -7,6 +7,7 @@ import HeaderApp from './HeaderApp/HeaderApp';
 import '../resources/sass/AppHarryPotter.scss';
 import Modal from 'react-modal';
 import AddForm from './AddForm/AddForm';
+import { urlApi } from '../data/types';
 
 const AppHarryPotter = () => {
 
@@ -14,7 +15,7 @@ const AppHarryPotter = () => {
     const [stateFilteredList, setStateFilteredList] = useState([]);
     const [stateSearchType, setStateSearchType] = useState(1);
     const [stateAddCharacter, setStateAddCharacter] = useState(false);
-    const urlApi = 'https://my-json-server.typicode.com/MarcosBC27/proyecto-harry-potter-api/';
+    
 
     const customStyles = {
         content: {

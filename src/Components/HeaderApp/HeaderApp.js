@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { UPDATE_FAVOURITE } from '../../data/types';
 import deleteImage from '../../resources/images/delete.svg';
@@ -48,8 +49,8 @@ const HeaderApp = ({ data, updateData, eventAddCharacter, list }) => {
                     <button onClick={executeShow} className="dropbtn">Favoritos</button>
                     <div ref={dropReference} className="dropdown-content">
                         {
-                            favouriteListCharacters.map((character, index) =>
-                                <div className="item" key={`fav_${index}`}>
+                            favouriteListCharacters.map(character =>
+                                <div className="item" key={`fav_${character.id}`}>
                                     <img className="photo" src={character.image} />
                                     <label>{character.name}</label>
                                     <img className="icon" src={deleteImage} onClick={() => deleteFavourite(character.id)} />
@@ -79,5 +80,10 @@ const mapDispatchToProps = dispatch => ({
         dispatch(data);
     },
 });
+
+HeaderApp.propTypes = {
+    eventAddCharacter: PropTypes.func.isRequired,
+    list: PropTypes.array.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderApp);

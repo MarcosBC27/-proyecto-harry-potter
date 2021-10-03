@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import imagenLogo from '../../resources/images/logo.jpg';
 import './Filters.scss';
 
@@ -30,6 +31,11 @@ const Filters = ({ searchType, eventChangeSearchType }) => {
             </div>
         </div>
     );
+};
+
+Filters.propTypes={
+    searchType: PropTypes.number.isRequired,
+    eventChangeSearchType: PropTypes.func.isRequired,
 };
 
 export default Filters;

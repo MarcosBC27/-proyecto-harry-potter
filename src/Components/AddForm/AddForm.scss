@@ -5,7 +5,6 @@
     display: flex;
     font-size: convertPixelsToV(12,680,1vh);
     width:convertPixelsToV(900);
-    height: convertPixelsToV(350,680,1vh);
     flex-direction: column;
 
     & .form-container{
@@ -46,6 +45,9 @@
             justify-content: center;
         }
         
+        & p{
+            color: red;
+        }
 
         & .button-form{
         

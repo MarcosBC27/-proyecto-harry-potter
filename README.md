@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Examen de Marcos Benitez Contreras 03/10/2021 aplicación React
+Proyecto de examen de Marcos Benitez Contreras para ingreso a AeroMexico
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ¿Como levantar el proyecto?
+Posicionarse en la raiz al nivel de este documento y realizar lo siguiente
 
-## Available Scripts
+### `Acceder a la siguiente liga por el navegador`
+Esta debe responder un objeto json el cual contiene la data con la que opera el proyecto 
+[https://my-json-server.typicode.com/MarcosBC27/proyecto-harry-potter-api/hpCharacters](https://my-json-server.typicode.com/MarcosBC27/proyecto-harry-potter-api/hpCharacters).
 
-In the project directory, you can run:
+### `Ejecutar el comando 'npm start'`
+Esto iniciaria el proyecto en el puerto 300 
+[http://localhost:3000](http://localhost:3000).
 
-### `npm start`
+## ¿Qué es lo que más te gustó de tu desarrollo?
+ - Me gusto poder empezar a utilizar FlexBox en SASS ya que no lo conocia
+ - Conocer la libreria json-server ya que es muy util con propositos de prueba
+ - Utilizar las diferentes librerias que conozco para lograr el proposito del a prueba
+ - Poder crear un proyecto desde cero maquetando y generando la estructura desde cero
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ¿Si hubieras tenido más tiempo ¿qué hubieras mejorado o qué más hubieras hecho?
+ - Terminar los estilos de moviles
+ - Ajustar algunos detalles en los estilos que logre 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Descríbenos un pain point o bug con el que te hayas encontrado y como lo solucionaste
+ - Sobre la data para trabajar me di cuenta de que en la lista de caracteres en cada uno de los nodos de los caracteres no se contaba con el identificador del personaje, lo agregue previo a subir la data
+ - De igual manera el servicio gratuito donde subi la data se tienen ciertas restriciones por el espacion por lo cual utilice solo un json y con ese consulte y persisti la información en el front

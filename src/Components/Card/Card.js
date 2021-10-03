@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { UPDATE_FAVOURITE } from '../../data/types';
 import favouriteIcon from '../../resources/images/favourite.svg';
@@ -102,6 +103,10 @@ const mapDispatchToProps = dispatch => ({
         dispatch(data);
     },
 });
+
+Card.propTypes = {
+    detailObject: PropTypes.object.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card)
 
