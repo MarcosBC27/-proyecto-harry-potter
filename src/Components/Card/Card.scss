@@ -1,42 +1,88 @@
 @import '../../resources/sass/functions.scss';
+@import '../../resources//sass/colurs.scss';
 
 .card-container{
     display: flex;
     width: 50%;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: convertPixelsToV(10,680,1vh);
+    
 
     & .card{
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+        border-radius: 5%;
+        font-size:convertPixelsToV(12,680,1vh);
+        background-color: $color-white;
         width: convertPixelsToV(500);
-        height: convertPixelsToV(200,680,1vh);
+        height: convertPixelsToV(175,680,1vh);
 
         & .image{
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
             width: 40%;
+            border-radius: 5% 0 0 5%;
             & img{
-                width: convertPixelsToV(100);
-                height: convertPixelsToV(100);
+                width: convertPixelsToV(130);
+                height: convertPixelsToV(130);
+                border-radius: 50%;
             }
+        }
+
+        & .back-gf{
+            background-image: linear-gradient(to bottom right,  #C23309 , #F3AB96);
+        }
+
+        & .back-sy{
+            background-image: linear-gradient(to bottom right, #087F22 , #7CE994);
+        }
+
+        & .back-hu{
+            background-image: linear-gradient(to bottom right, #D4EA10 , #E4F356);
+        }
+
+        & .back-ra{
+            background-image: linear-gradient(to bottom right, #107CAA , #50BDE5);
         }
 
         & .detail{
             display: flex;
             flex-direction: column;
+            margin-top: convertPixelsToV(5,680,1vh);
             width: 60%;
+            border-radius: 0 5% 5% 0;
+
+            &.back-f{
+                background-color: $color-light-gray;
+                margin-top:0;
+            }
+
+            &.back-a{
+                background-color: $color-white;
+            }
+            
             & .title{
                 display: flex;
                 justify-content: space-between;
-                
+                color: $color-gray;
+                margin-left: convertPixelsToV(5);
+
                 & img{
-                    width: convertPixelsToV(10);
-                    height: convertPixelsToV(10);
+                    width: convertPixelsToV(17);
+                    height: convertPixelsToV(17);
+                    margin-right: convertPixelsToV(16);
                 }
             }
+
+            & .name{
+                margin-top: convertPixelsToV(10,680,1vh);
+                margin-bottom: convertPixelsToV(10,680,1vh);
+                font-size: convertPixelsToV(20,680,1vh);
+                margin-left: convertPixelsToV(5);
+            }
+
         }
     }
 }

@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import imagenLogo from '../../resources/images/logo.jpg';
 import './Filters.scss';
 
 const Filters = () => {
+    const [stateButton, setStateButton] = useState(1);
+
     return (
         <div className="filters-container">
             <div>
-                Titulo
+                <img src={imagenLogo} />
             </div>
-            <div>
-                Selecciona tu filtro
+            <div className="title">
+                <strong>Selecciona tu filtro</strong>
             </div>
             <div className="actions">
                 <div>
-                    <button type="button">ESTUDIANTES</button>
+                    <button type="button" className={`button ${stateButton === 1 ? 'active' : 'inactive'}`}>ESTUDIANTES</button>
                 </div>
                 <div>
-                    <button type="button">STAFF</button>
+                    <button type="button" className={`button ${stateButton === 2 ? 'active' : 'inactive'}`}>STAFF</button>
                 </div>
             </div>
         </div>
