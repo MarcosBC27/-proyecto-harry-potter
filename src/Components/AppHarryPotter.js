@@ -4,6 +4,7 @@ import HeaderApp from './HeaderApp/HeaderApp';
 import Results from './Results/Results';
 import { Provider } from 'react-redux';
 import store from '../data/storage';
+import ReactModal from 'react-modal';
 import '../resources/sass/AppHarryPotter.scss';
 
 const AppHarryPotter = () => {
@@ -34,7 +35,7 @@ const AppHarryPotter = () => {
             const filteredArray = stateCharacterList.filter(ch => ch.hogwartsStudent === validateIsStudent);
             setStateFilteredList(filteredArray);
         }
-    }, [stateCharacterList,stateSearchType]);
+    }, [stateCharacterList, stateSearchType]);
 
     return (
         <Provider store={store}>
@@ -51,6 +52,22 @@ const AppHarryPotter = () => {
                     list={stateFilteredList}
                 />
             </div>
+            <ReactModal
+                isOpen={stateAddCharacter}
+                closeTimeoutMS={0}
+                style={{ overlay: {}, content: {} }}
+                contentLabel={"Example Modal"}
+                className={"ReactModal__Content"}
+                bodyOpenClassName={"ReactModal__Body--open"}
+                shouldCloseOnEsc={false}
+                shouldReturnFocusAfterClose={true}
+                role={"dialog"}
+                preventScroll={false}
+                parentSelector={() => document.body}
+                testId={""}
+            >
+                <p>Modal Content</p>
+            </ReactModal>
         </Provider>
     );
 };
