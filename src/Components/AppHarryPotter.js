@@ -9,37 +9,46 @@ import '../resources/sass/AppHarryPotter.scss';
 const AppHarryPotter = () => {
 
     const [stateCharacterList, setStateCharacterList] = useState([]);
+    const [stateFilteredList, setStateFilteredList] = useState([]);
     const [stateSearchType, setStateSearchType] = useState(1);
     const [stateAddCharacter, setStateAddCharacter] = useState(false);
     const urlApi = 'https://my-json-server.typicode.com/MarcosBC27/proyecto-harry-potter-api/';
 
-    const getData = async() =>{
+    const getData = async () => {
         fetch(`${urlApi}hpCharacters`)
-        .then((resp) => resp.json())
-        .then((data) => {
-            console.log(data);
-            setStateCharacterList(data);
-        })
-        .catch((e) => console.log(e))
-        .catch((e) => console.log(e)); 
+            .then((resp) => resp.json())
+            .then((data) => {
+                setStateCharacterList(data);
+            })
+            .catch((e) => console.log(e))
+            .catch((e) => console.log(e));
     };
 
     useEffect(() => {
         getData();
     }, []);
 
+    useEffect(() => {
+        if (stateCharacterList.length > 0) {
+            const validateIsStudent = stateSearchType === 1;
+            const filteredArray = stateCharacterList.filter(ch => ch.hogwartsStudent === validateIsStudent);
+            setStateFilteredList(filteredArray);
+        }
+    }, [stateCharacterList,stateSearchType]);
+
     return (
         <Provider store={store}>
             <div className="main-container">
-                <HeaderApp  
+                <HeaderApp
                     eventAddCharacter={setStateAddCharacter}
+                    list={stateCharacterList}
                 />
                 <Filters
                     searchType={stateSearchType}
                     eventChangeSearchType={setStateSearchType}
                 />
-                <Results 
-                    list={stateCharacterList}
+                <Results
+                    list={stateFilteredList}
                 />
             </div>
         </Provider>

@@ -1,38 +1,55 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { UPDATE_FAVOURITE } from '../../data/types';
 import deleteImage from '../../resources/images/delete.svg';
 import './HeaderApp.scss';
 
-const HeaderApp = ({ data, updateData, eventAddCharacter }) => {
+const HeaderApp = ({ data, updateData, eventAddCharacter, list }) => {
 
     const dropReference = useRef(null);
+    const [favouriteListCharacters, setFavouriteListCharacters] = useState([]);
 
     const executeShow = () => {
         dropReference.current.classList.toggle("show");
     };
 
     const deleteFavourite = id => {
-        const newArray = data.favouriteList.filter(character => character.id !== id);
+        const newArray = data.favouriteList.filter(idItem => idItem !== id);
         const updObject = {
             type: UPDATE_FAVOURITE,
             data: {
                 favouriteList: newArray,
             },
-        };
+        }
 
         updateData(updObject);
     };
 
+    useEffect(() => {
+
+        let newArray = [];
+
+        data.favouriteList.map(idItem => {
+            const itemFav = list.find(ch => ch.id === idItem);
+            if (typeof (itemFav) !== 'undefined') {
+                newArray.push(itemFav);
+            }
+        });
+
+        setFavouriteListCharacters(newArray);
+
+    }, [data.favouriteList]);
+
+
     return (
         <div className="header-container">
             <div className="right-m">
-                <div class="dropdown">
+                <div className="dropdown">
                     <button onClick={executeShow} className="dropbtn">Dropdown</button>
                     <div ref={dropReference} className="dropdown-content">
                         {
-                            data.favouriteList.map(character =>
-                                <div className="item">
+                            favouriteListCharacters.map((character, index) =>
+                                <div className="item" key={`fav_${index}`}>
                                     <img className="photo" src={character.image} />
                                     <label>{character.name}</label>
                                     <img className="icon" src={deleteImage} onClick={() => deleteFavourite(character.id)} />

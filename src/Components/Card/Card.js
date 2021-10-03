@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { UPDATE_FAVOURITE } from '../../data/types';
 import favouriteIcon from '../../resources/images/favourite.svg';
 import preFavouriteIcon from '../../resources/images/preFavourite.svg';
 import './Card.scss';
 
-const Card = ({ detailObject}) => {
-    const { image,
+const Card = ({ data, updateData, detailObject }) => {
+    const {
+        id,
+        image,
         house,
         alive,
         hogwartsStudent,
@@ -33,6 +37,33 @@ const Card = ({ detailObject}) => {
     }
 
 
+    const [stateIsFavourite, setStateIsFavourite] = useState(false);
+
+    const addFavourite = idUpdate => {
+        const numberOfFavourite = data.favouriteList.length;
+        const validateObject = data.favouriteList.find(element => element === idUpdate);
+        if (numberOfFavourite < 5 && typeof (validateObject) === 'undefined') {
+
+            const updObject = {
+                type: UPDATE_FAVOURITE,
+                data: {
+                    favouriteList: [
+                        ...data.favouriteList,
+                        idUpdate,
+                    ],
+                },
+            };
+
+            updateData(updObject);
+        }
+    };
+
+    useEffect(() => {
+
+        const favouriteObject = data.favouriteList.find(idItem => idItem === id);
+        setStateIsFavourite(typeof (favouriteObject) !== 'undefined');
+
+    }, [data.favouriteList]);
 
     return (
         <div className="card-container">
@@ -43,7 +74,7 @@ const Card = ({ detailObject}) => {
                 <div className={`detail ${alive ? 'back-a' : 'back-f'}`}>
                     <div className="title">
                         <label>{`${alive ? 'VIVO' : 'FINADO'}/${hogwartsStudent ? 'ESTUDIANTE' : 'STAFF'}`}</label>
-                        <img src={favouriteIcon} />
+                        <img src={stateIsFavourite ? favouriteIcon : preFavouriteIcon} onClick={() => addFavourite(id)} />
                     </div>
                     <div className="name">
                         {name}
@@ -58,4 +89,19 @@ const Card = ({ detailObject}) => {
     );
 };
 
-export default Card;
+const mapStateToProps = (state, ownProps) => (
+    {
+        data: {
+            favouriteList: state.favouriteList,
+        },
+        props: ownProps,
+    });
+
+const mapDispatchToProps = dispatch => ({
+    updateData(data) {
+        dispatch(data);
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card)
+

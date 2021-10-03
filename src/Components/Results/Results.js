@@ -10,6 +10,7 @@ const Results = ({list}) => {
             {
                 list.map(character =>
                     < Card
+                        key={`card_${character.id}`}
                         detailObject={character}
                     />
                 )
