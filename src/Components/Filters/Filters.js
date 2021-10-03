@@ -16,7 +16,7 @@ const Filters = ({ searchType, eventChangeSearchType }) => {
     return (
         <div className="filters-container">
             <div>
-                <img src={imagenLogo} />
+                <img src={imagenLogo} alt="logo" />
             </div>
             <div className="title">
                 <strong>Selecciona tu filtro</strong>

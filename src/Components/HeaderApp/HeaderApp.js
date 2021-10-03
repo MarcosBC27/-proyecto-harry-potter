@@ -30,16 +30,16 @@ const HeaderApp = ({ data, updateData, eventAddCharacter, list }) => {
 
         let newArray = [];
 
-        data.favouriteList.map(idItem => {
-            const itemFav = list.find(ch => ch.id === idItem);
+        for(let i = 0; i < data.favouriteList.length; i++) {
+            const itemFav = list.find(ch => ch.id === data.favouriteList[i]);
             if (typeof (itemFav) !== 'undefined') {
                 newArray.push(itemFav);
             }
-        });
+        }
 
         setFavouriteListCharacters(newArray);
 
-    }, [data.favouriteList]);
+    }, [data.favouriteList, list]);
 
 
     return (
@@ -51,9 +51,9 @@ const HeaderApp = ({ data, updateData, eventAddCharacter, list }) => {
                         {
                             favouriteListCharacters.map(character =>
                                 <div className="item" key={`fav_${character.id}`}>
-                                    <img className="photo" src={character.image} />
+                                    <img className="photo" src={character.image} alt="photo" />
                                     <label>{character.name}</label>
-                                    <img className="icon" src={deleteImage} onClick={() => deleteFavourite(character.id)} />
+                                    <img className="icon" src={deleteImage} onClick={() => deleteFavourite(character.id)} alt="icon" />
                                 </div>
                             )
                         }

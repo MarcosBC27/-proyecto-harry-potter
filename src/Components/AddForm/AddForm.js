@@ -51,7 +51,7 @@ const AddForm = ({ eventCloseModal }) => {
                     <h2>Agrega un personaje</h2>
                 </div>
                 <div className="cell">
-                    <img src={icon} onClick={() => eventCloseModal(false)} />
+                    <img src={icon} onClick={() => eventCloseModal(false)} alt="X" />
                 </div>
                 <div className="cell">
                     <div className="field">

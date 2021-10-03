@@ -64,18 +64,18 @@ const Card = ({ data, updateData, detailObject }) => {
         const favouriteObject = data.favouriteList.find(idItem => idItem === id);
         setStateIsFavourite(typeof (favouriteObject) !== 'undefined');
 
-    }, [data.favouriteList]);
+    }, [data.favouriteList,id]);
 
     return (
         <div className="card-container">
             <div className="card">
                 <div className={`image ${houseColour}`}>
-                    <img src={image} />
+                    <img src={image} alt="photo" />
                 </div>
                 <div className={`detail ${alive ? 'back-a' : 'back-f'}`}>
                     <div className="title">
                         <label>{`${alive ? 'VIVO' : 'FINADO'}/${hogwartsStudent ? 'ESTUDIANTE' : 'STAFF'}`}</label>
-                        <img src={stateIsFavourite ? favouriteIcon : preFavouriteIcon} onClick={() => addFavourite(id)} />
+                        <img src={stateIsFavourite ? favouriteIcon : preFavouriteIcon} onClick={() => addFavourite(id)} alt="icon" />
                     </div>
                     <div className="name">
                         {name}
