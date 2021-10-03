@@ -1,15 +1,15 @@
 import React from 'react';
-import { hpCharacters } from '../../data/types';
 import Card from '../Card/Card';
 import './Results.scss';
 
 
-const Results = () => {
+const Results = ({list}) => {
+
     return (
         <div className="results-container">
             {
-                hpCharacters.map(character =>
-                    <Card
+                list.map(character =>
+                    < Card
                         detailObject={character}
                     />
                 )

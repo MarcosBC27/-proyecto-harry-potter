@@ -8,8 +8,6 @@ const Card = ({ detailObject}) => {
         house,
         alive,
         hogwartsStudent,
-        hogwartsStaff,
-        isFavourite,
         name,
         dateOfBirth,
         gender,

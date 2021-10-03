@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import imagenLogo from '../../resources/images/logo.jpg';
 import './Filters.scss';
 
-const Filters = () => {
-    const [stateButton, setStateButton] = useState(1);
+const Filters = ({ searchType, eventChangeSearchType }) => {
+
+    const handlerChangeSearchType = () => {
+        if (searchType === 1) {
+            eventChangeSearchType(2);
+        } else {
+            eventChangeSearchType(1);
+        }
+    };
 
     return (
         <div className="filters-container">
@@ -15,10 +22,10 @@ const Filters = () => {
             </div>
             <div className="actions">
                 <div>
-                    <button type="button" className={`button ${stateButton === 1 ? 'active' : 'inactive'}`}>ESTUDIANTES</button>
+                    <button type="button" onClick={handlerChangeSearchType} className={`button ${searchType === 1 ? 'active' : 'inactive'}`}>ESTUDIANTES</button>
                 </div>
                 <div>
-                    <button type="button" className={`button ${stateButton === 2 ? 'active' : 'inactive'}`}>STAFF</button>
+                    <button type="button" onClick={handlerChangeSearchType} className={`button ${searchType === 2 ? 'active' : 'inactive'}`}>STAFF</button>
                 </div>
             </div>
         </div>

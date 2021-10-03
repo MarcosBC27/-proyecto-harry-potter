@@ -1,5 +1,308 @@
 export const hpCharacters = [
     {
+        "id": 1,
+        "image": "http://hp-api.herokuapp.com/images/harry.jpg",
+        "house": "Gryffindor",
+        "alive": true,
+        "hogwartsStudent": true,
+        "name": "Harry Potter",
+        "dateOfBirth": "31-07-1980",
+        "gender": "male",
+        "eyeColour": "green",
+        "hairColour": "black"
+    },
+    {
+        "id": 2,
+        "image": "http://hp-api.herokuapp.com/images/hermione.jpeg",
+        "house": "Gryffindor",
+        "alive": true,
+        "hogwartsStudent": true,
+        "name": "Hermione Granger",
+        "dateOfBirth": "19-09-1979",
+        "gender": "female",
+        "eyeColour": "brown",
+        "hairColour": "brown"
+    },
+    {
+        "id": 3,
+        "image": "http://hp-api.herokuapp.com/images/ron.jpg",
+        "house": "Gryffindor",
+        "alive": true,
+        "hogwartsStudent": true,
+        "name": "Ron Weasley",
+        "dateOfBirth": "01-03-1980",
+        "gender": "male",
+        "eyeColour": "blue",
+        "hairColour": "red"
+    },
+    {
+        "id": 4,
+        "image": "http://hp-api.herokuapp.com/images/draco.jpg",
+        "house": "Slytherin",
+        "alive": true,
+        "hogwartsStudent": true,
+        "name": "Draco Malfoy",
+        "dateOfBirth": "05-06-1980",
+        "gender": "male",
+        "eyeColour": "grey",
+        "hairColour": "blonde"
+    },
+    {
+        "id": 5,
+        "image": "http://hp-api.herokuapp.com/images/mcgonagall.jpg",
+        "house": "Gryffindor",
+        "alive": true,
+        "hogwartsStudent": false,
+        "name": "Minerva McGonagall",
+        "dateOfBirth": "04-10-1925",
+        "gender": "female",
+        "eyeColour": "",
+        "hairColour": "black"
+    },
+    {
+        "id": 6,
+        "image": "http://hp-api.herokuapp.com/images/cedric.png",
+        "house": "Hufflepuff",
+        "alive": false,
+        "hogwartsStudent": true,
+        "name": "Cedric Diggory",
+        "dateOfBirth": "",
+        "gender": "male",
+        "eyeColour": "grey",
+        "hairColour": "brown"
+    },
+    {
+        "id": 7,
+        "image": "http://hp-api.herokuapp.com/images/cho.jpg",
+        "house": "Ravenclaw",
+        "alive": true,
+        "hogwartsStudent": true,
+        "name": "Cho Chang",
+        "dateOfBirth": "",
+        "gender": "female",
+        "eyeColour": "brown",
+        "hairColour": "black"
+    },
+    {
+        "id": 8,
+        "image": "http://hp-api.herokuapp.com/images/snape.jpg",
+        "house": "Slytherin",
+        "alive": false,
+        "hogwartsStudent": false,
+        "name": "Severus Snape",
+        "dateOfBirth": "09-01-1960",
+        "gender": "male",
+        "eyeColour": "black",
+        "hairColour": "black"
+    },
+    {
+        "id": 9,
+        "image": "http://hp-api.herokuapp.com/images/hagrid.png",
+        "house": "Gryffindor",
+        "alive": true,
+        "hogwartsStudent": false,
+        "name": "Rubeus Hagrid",
+        "dateOfBirth": "06-12-1928",
+        "gender": "male",
+        "eyeColour": "black",
+        "hairColour": "black"
+    },
+    {
+        "id": 10,
+        "image": "http://hp-api.herokuapp.com/images/neville.jpg",
+        "house": "Gryffindor",
+        "alive": true,
+        "hogwartsStudent": true,
+        "name": "Neville Longbottom",
+        "dateOfBirth": "30-07-1980",
+        "gender": "male",
+        "eyeColour": "",
+        "hairColour": "blonde"
+    },
+    {
+        "id": 11,
+        "image": "http://hp-api.herokuapp.com/images/luna.jpg",
+        "house": "Ravenclaw",
+        "alive": true,
+        "hogwartsStudent": true,
+        "name": "Luna Lovegood",
+        "dateOfBirth": "13-02-1981",
+        "gender": "female",
+        "eyeColour": "grey",
+        "hairColour": "blonde"
+    },
+    {
+        "id": 12,
+        "image": "http://hp-api.herokuapp.com/images/ginny.jpg",
+        "house": "Gryffindor",
+        "alive": true,
+        "hogwartsStudent": true,
+        "name": "Ginny Weasley",
+        "dateOfBirth": "11-08-1981",
+        "gender": "female",
+        "eyeColour": "brown",
+        "hairColour": "red"
+    },
+    {
+        "id": 13,
+        "image": "http://hp-api.herokuapp.com/images/sirius.JPG",
+        "house": "Gryffindor",
+        "alive": false,
+        "hogwartsStudent": false,
+        "name": "Sirius Black",
+        "dateOfBirth": "03-11-1959",
+        "gender": "male",
+        "eyeColour": "grey",
+        "hairColour": "black"
+    },
+    {
+        "id": 14,
+        "image": "http://hp-api.herokuapp.com/images/lupin.jpg",
+        "house": "Gryffindor",
+        "alive": false,
+        "hogwartsStudent": false,
+        "name": "Remus Lupin",
+        "dateOfBirth": "10-03-1960",
+        "gender": "male",
+        "eyeColour": "green",
+        "hairColour": "brown"
+    },
+    {
+        "id": 15,
+        "image": "http://hp-api.herokuapp.com/images/arthur.jpg",
+        "house": "Gryffindor",
+        "alive": true,
+        "hogwartsStudent": false,
+        "name": "Arthur Weasley",
+        "dateOfBirth": "06-02-1950",
+        "gender": "male",
+        "eyeColour": "blue",
+        "hairColour": "red"
+    },
+    {
+        "id": 16,
+        "image": "http://hp-api.herokuapp.com/images/bellatrix.jpg",
+        "house": "Slytherin",
+        "alive": false,
+        "hogwartsStudent": false,
+        "name": "Bellatrix Lestrange",
+        "dateOfBirth": "",
+        "gender": "female",
+        "eyeColour": "brown",
+        "hairColour": "black"
+    },
+    {
+        "id": 17,
+        "image": "http://hp-api.herokuapp.com/images/voldemort.jpg",
+        "house": "Slytherin",
+        "alive": false,
+        "hogwartsStudent": false,
+        "name": "Lord Voldemort",
+        "dateOfBirth": "31-12-1926",
+        "gender": "male",
+        "eyeColour": "red",
+        "hairColour": "bald"
+    },
+    {
+        "id": 18,
+        "image": "http://hp-api.herokuapp.com/images/slughorn.JPG",
+        "house": "Slytherin",
+        "alive": true,
+        "hogwartsStudent": false,
+        "name": "Horace Slughorn",
+        "dateOfBirth": "",
+        "gender": "male",
+        "eyeColour": "green",
+        "hairColour": "blonde"
+    },
+    {
+        "id": 19,
+        "image": "http://hp-api.herokuapp.com/images/kingsley.jpg",
+        "house": "",
+        "alive": true,
+        "hogwartsStudent": false,
+        "name": "Kingsley Shacklebolt",
+        "dateOfBirth": "",
+        "gender": "male",
+        "eyeColour": "brown",
+        "hairColour": "brown"
+    },
+    {
+        "id": 20,
+        "image": "http://hp-api.herokuapp.com/images/umbridge.jpg",
+        "house": "Slytherin",
+        "alive": true,
+        "hogwartsStudent": false,
+        "name": "Dolores Umbridge",
+        "dateOfBirth": "",
+        "gender": "female",
+        "eyeColour": "brown",
+        "hairColour": "grey"
+    },
+    {
+        "id": 21,
+        "image": "http://hp-api.herokuapp.com/images/lucius.jpg",
+        "house": "Slytherin",
+        "alive": true,
+        "hogwartsStudent": false,
+        "name": "Lucius Malfoy",
+        "dateOfBirth": "",
+        "gender": "male",
+        "eyeColour": "grey",
+        "hairColour": "blonde"
+    },
+    {
+        "id": 22,
+        "image": "http://hp-api.herokuapp.com/images/crabbe.jpg",
+        "house": "Slytherin",
+        "alive": false,
+        "hogwartsStudent": true,
+        "name": "Vincent Crabbe",
+        "dateOfBirth": "",
+        "gender": "male",
+        "eyeColour": "black",
+        "hairColour": "black"
+    },
+    {
+        "id": 23,
+        "image": "http://hp-api.herokuapp.com/images/goyle.jpg",
+        "house": "Slytherin",
+        "alive": true,
+        "hogwartsStudent": true,
+        "name": "Gregory Goyle",
+        "dateOfBirth": "",
+        "gender": "male",
+        "eyeColour": "",
+        "hairColour": "brown"
+    },
+    {
+        "id": 24,
+        "image": "http://hp-api.herokuapp.com/images/norris.JPG",
+        "house": "",
+        "alive": true,
+        "hogwartsStudent": false,
+        "name": "Mrs Norris",
+        "dateOfBirth": "",
+        "gender": "female",
+        "eyeColour": "yellow",
+        "hairColour": "brown"
+    },
+    {
+        "id": 25,
+        "image": "http://hp-api.herokuapp.com/images/filch.jpg",
+        "house": "",
+        "alive": true,
+        "hogwartsStudent": false,
+        "name": "Argus Filch",
+        "dateOfBirth": "",
+        "gender": "male",
+        "eyeColour": "",
+        "hairColour": "grey"
+    }
+];
+
+export const hpGryffindor = [
+    {
         "name": "Harry Potter",
         "species": "human",
         "gender": "male",
@@ -66,28 +369,6 @@ export const hpCharacters = [
         "image": "http://hp-api.herokuapp.com/images/ron.jpg"
     },
     {
-        "name": "Draco Malfoy",
-        "species": "human",
-        "gender": "male",
-        "house": "Slytherin",
-        "dateOfBirth": "05-06-1980",
-        "yearOfBirth": 1980,
-        "ancestry": "pure-blood",
-        "eyeColour": "grey",
-        "hairColour": "blonde",
-        "wand": {
-            "wood": "hawthorn",
-            "core": "unicorn tail-hair",
-            "length": 10
-        },
-        "patronus": "",
-        "hogwartsStudent": true,
-        "hogwartsStaff": false,
-        "actor": "Tom Felton",
-        "alive": true,
-        "image": "http://hp-api.herokuapp.com/images/draco.jpg"
-    },
-    {
         "name": "Minerva McGonagall",
         "species": "human",
         "gender": "female",
@@ -108,72 +389,6 @@ export const hpCharacters = [
         "actor": "Dame Maggie Smith",
         "alive": true,
         "image": "http://hp-api.herokuapp.com/images/mcgonagall.jpg"
-    },
-    {
-        "name": "Cedric Diggory",
-        "species": "human",
-        "gender": "male",
-        "house": "Hufflepuff",
-        "dateOfBirth": "",
-        "yearOfBirth": 1977,
-        "ancestry": "",
-        "eyeColour": "grey",
-        "hairColour": "brown",
-        "wand": {
-            "wood": "ash",
-            "core": "unicorn hair",
-            "length": 12.25
-        },
-        "patronus": "",
-        "hogwartsStudent": true,
-        "hogwartsStaff": false,
-        "actor": "Robert Pattinson",
-        "alive": false,
-        "image": "http://hp-api.herokuapp.com/images/cedric.png"
-    },
-    {
-        "name": "Cho Chang",
-        "species": "human",
-        "gender": "female",
-        "house": "Ravenclaw",
-        "dateOfBirth": "",
-        "yearOfBirth": "",
-        "ancestry": "",
-        "eyeColour": "brown",
-        "hairColour": "black",
-        "wand": {
-            "wood": "",
-            "core": "",
-            "length": ""
-        },
-        "patronus": "swan",
-        "hogwartsStudent": true,
-        "hogwartsStaff": false,
-        "actor": "Katie Leung",
-        "alive": true,
-        "image": "http://hp-api.herokuapp.com/images/cho.jpg"
-    },
-    {
-        "name": "Severus Snape",
-        "species": "human",
-        "gender": "male",
-        "house": "Slytherin",
-        "dateOfBirth": "09-01-1960",
-        "yearOfBirth": 1960,
-        "ancestry": "half-blood",
-        "eyeColour": "black",
-        "hairColour": "black",
-        "wand": {
-            "wood": "",
-            "core": "",
-            "length": ""
-        },
-        "patronus": "doe",
-        "hogwartsStudent": false,
-        "hogwartsStaff": true,
-        "actor": "Alan Rickman",
-        "alive": false,
-        "image": "http://hp-api.herokuapp.com/images/snape.jpg"
     },
     {
         "name": "Rubeus Hagrid",
@@ -218,28 +433,6 @@ export const hpCharacters = [
         "actor": "Matthew Lewis",
         "alive": true,
         "image": "http://hp-api.herokuapp.com/images/neville.jpg"
-    },
-    {
-        "name": "Luna Lovegood",
-        "species": "human",
-        "gender": "female",
-        "house": "Ravenclaw",
-        "dateOfBirth": "13-02-1981",
-        "yearOfBirth": 1981,
-        "ancestry": "",
-        "eyeColour": "grey",
-        "hairColour": "blonde",
-        "wand": {
-            "wood": "",
-            "core": "",
-            "length": ""
-        },
-        "patronus": "hare",
-        "hogwartsStudent": true,
-        "hogwartsStaff": false,
-        "actor": "Evanna Lynch",
-        "alive": true,
-        "image": "http://hp-api.herokuapp.com/images/luna.jpg"
     },
     {
         "name": "Ginny Weasley",
@@ -328,50 +521,97 @@ export const hpCharacters = [
         "actor": "Mark Williams",
         "alive": true,
         "image": "http://hp-api.herokuapp.com/images/arthur.jpg"
-    },
+    }
+];
+
+export const hpStaff = [
     {
-        "name": "Bellatrix Lestrange",
+        "name": "Minerva McGonagall",
         "species": "human",
         "gender": "female",
-        "house": "Slytherin",
-        "dateOfBirth": "",
-        "yearOfBirth": 1951,
-        "ancestry": "pure-blood",
-        "eyeColour": "brown",
+        "house": "Gryffindor",
+        "dateOfBirth": "04-10-1925",
+        "yearOfBirth": 1925,
+        "ancestry": "",
+        "eyeColour": "",
         "hairColour": "black",
         "wand": {
-            "wood": "walnut",
-            "core": "dragon heartstring",
-            "length": 12.75
+            "wood": "",
+            "core": "",
+            "length": ""
         },
-        "patronus": "",
+        "patronus": "tabby cat",
         "hogwartsStudent": false,
-        "hogwartsStaff": false,
-        "actor": "Helena Bonham Carter",
-        "alive": false,
-        "image": "http://hp-api.herokuapp.com/images/bellatrix.jpg"
+        "hogwartsStaff": true,
+        "actor": "Dame Maggie Smith",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/mcgonagall.jpg"
     },
     {
-        "name": "Lord Voldemort",
+        "name": "Severus Snape",
         "species": "human",
         "gender": "male",
         "house": "Slytherin",
-        "dateOfBirth": "31-12-1926",
-        "yearOfBirth": 1926,
+        "dateOfBirth": "09-01-1960",
+        "yearOfBirth": 1960,
         "ancestry": "half-blood",
-        "eyeColour": "red",
-        "hairColour": "bald",
+        "eyeColour": "black",
+        "hairColour": "black",
         "wand": {
-            "wood": "yew",
-            "core": "phoenix feather",
-            "length": 13.5
+            "wood": "",
+            "core": "",
+            "length": ""
+        },
+        "patronus": "doe",
+        "hogwartsStudent": false,
+        "hogwartsStaff": true,
+        "actor": "Alan Rickman",
+        "alive": false,
+        "image": "http://hp-api.herokuapp.com/images/snape.jpg"
+    },
+    {
+        "name": "Rubeus Hagrid",
+        "species": "half-giant",
+        "gender": "male",
+        "house": "Gryffindor",
+        "dateOfBirth": "06-12-1928",
+        "yearOfBirth": 1928,
+        "ancestry": "half-blood",
+        "eyeColour": "black",
+        "hairColour": "black",
+        "wand": {
+            "wood": "oak",
+            "core": "",
+            "length": 16
         },
         "patronus": "",
         "hogwartsStudent": false,
-        "hogwartsStaff": false,
-        "actor": "Ralph Fiennes",
+        "hogwartsStaff": true,
+        "actor": "Robbie Coltrane",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/hagrid.png"
+    },
+    {
+        "name": "Remus Lupin",
+        "species": "werewolf",
+        "gender": "male",
+        "house": "Gryffindor",
+        "dateOfBirth": "10-03-1960",
+        "yearOfBirth": 1960,
+        "ancestry": "half-blood",
+        "eyeColour": "green",
+        "hairColour": "brown",
+        "wand": {
+            "wood": "cypress",
+            "core": "unicorn tail-hair",
+            "length": 10.25
+        },
+        "patronus": "wolf",
+        "hogwartsStudent": false,
+        "hogwartsStaff": true,
+        "actor": "David Thewlis",
         "alive": false,
-        "image": "http://hp-api.herokuapp.com/images/voldemort.jpg"
+        "image": "http://hp-api.herokuapp.com/images/lupin.jpg"
     },
     {
         "name": "Horace Slughorn",
@@ -396,28 +636,6 @@ export const hpCharacters = [
         "image": "http://hp-api.herokuapp.com/images/slughorn.JPG"
     },
     {
-        "name": "Kingsley Shacklebolt",
-        "species": "human",
-        "gender": "male",
-        "house": "",
-        "dateOfBirth": "",
-        "yearOfBirth": "",
-        "ancestry": "pure-blood",
-        "eyeColour": "brown",
-        "hairColour": "brown",
-        "wand": {
-            "wood": "",
-            "core": "",
-            "length": ""
-        },
-        "patronus": "lynx",
-        "hogwartsStudent": false,
-        "hogwartsStaff": false,
-        "actor": "George Harris",
-        "alive": true,
-        "image": "http://hp-api.herokuapp.com/images/kingsley.jpg"
-    },
-    {
         "name": "Dolores Umbridge",
         "species": "human",
         "gender": "female",
@@ -438,72 +656,6 @@ export const hpCharacters = [
         "actor": "Imelda Staunton",
         "alive": true,
         "image": "http://hp-api.herokuapp.com/images/umbridge.jpg"
-    },
-    {
-        "name": "Lucius Malfoy",
-        "species": "human",
-        "gender": "male",
-        "house": "Slytherin",
-        "dateOfBirth": "",
-        "yearOfBirth": 1954,
-        "ancestry": "pure-blood",
-        "eyeColour": "grey",
-        "hairColour": "blonde",
-        "wand": {
-            "wood": "elm",
-            "core": "dragon heartstring",
-            "length": 18
-        },
-        "patronus": "",
-        "hogwartsStudent": false,
-        "hogwartsStaff": false,
-        "actor": "Jason Isaacs",
-        "alive": true,
-        "image": "http://hp-api.herokuapp.com/images/lucius.jpg"
-    },
-    {
-        "name": "Vincent Crabbe",
-        "species": "human",
-        "gender": "male",
-        "house": "Slytherin",
-        "dateOfBirth": "",
-        "yearOfBirth": "",
-        "ancestry": "pure-blood",
-        "eyeColour": "black",
-        "hairColour": "black",
-        "wand": {
-            "wood": "",
-            "core": "",
-            "length": ""
-        },
-        "patronus": "",
-        "hogwartsStudent": true,
-        "hogwartsStaff": false,
-        "actor": "Jamie Waylett",
-        "alive": false,
-        "image": "http://hp-api.herokuapp.com/images/crabbe.jpg"
-    },
-    {
-        "name": "Gregory Goyle",
-        "species": "human",
-        "gender": "male",
-        "house": "Slytherin",
-        "dateOfBirth": "",
-        "yearOfBirth": "",
-        "ancestry": "pure-blood",
-        "eyeColour": "",
-        "hairColour": "brown",
-        "wand": {
-            "wood": "",
-            "core": "",
-            "length": ""
-        },
-        "patronus": "",
-        "hogwartsStudent": true,
-        "hogwartsStaff": false,
-        "actor": "Josh Herdman",
-        "alive": true,
-        "image": "http://hp-api.herokuapp.com/images/goyle.jpg"
     },
     {
         "name": "Mrs Norris",
@@ -550,3 +702,250 @@ export const hpCharacters = [
         "image": "http://hp-api.herokuapp.com/images/filch.jpg"
     }
 ];
+
+export const hpStudents = [
+    {
+        "name": "Harry Potter",
+        "species": "human",
+        "gender": "male",
+        "house": "Gryffindor",
+        "dateOfBirth": "31-07-1980",
+        "yearOfBirth": 1980,
+        "ancestry": "half-blood",
+        "eyeColour": "green",
+        "hairColour": "black",
+        "wand": {
+            "wood": "holly",
+            "core": "phoenix feather",
+            "length": 11
+        },
+        "patronus": "stag",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Daniel Radcliffe",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/harry.jpg"
+    },
+    {
+        "name": "Hermione Granger",
+        "species": "human",
+        "gender": "female",
+        "house": "Gryffindor",
+        "dateOfBirth": "19-09-1979",
+        "yearOfBirth": 1979,
+        "ancestry": "muggleborn",
+        "eyeColour": "brown",
+        "hairColour": "brown",
+        "wand": {
+            "wood": "vine",
+            "core": "dragon heartstring",
+            "length": ""
+        },
+        "patronus": "otter",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Emma Watson",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/hermione.jpeg"
+    },
+    {
+        "name": "Ron Weasley",
+        "species": "human",
+        "gender": "male",
+        "house": "Gryffindor",
+        "dateOfBirth": "01-03-1980",
+        "yearOfBirth": 1980,
+        "ancestry": "pure-blood",
+        "eyeColour": "blue",
+        "hairColour": "red",
+        "wand": {
+            "wood": "willow",
+            "core": "unicorn tail-hair",
+            "length": 14
+        },
+        "patronus": "Jack Russell terrier",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Rupert Grint",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/ron.jpg"
+    },
+    {
+        "name": "Draco Malfoy",
+        "species": "human",
+        "gender": "male",
+        "house": "Slytherin",
+        "dateOfBirth": "05-06-1980",
+        "yearOfBirth": 1980,
+        "ancestry": "pure-blood",
+        "eyeColour": "grey",
+        "hairColour": "blonde",
+        "wand": {
+            "wood": "hawthorn",
+            "core": "unicorn tail-hair",
+            "length": 10
+        },
+        "patronus": "",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Tom Felton",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/draco.jpg"
+    },
+    {
+        "name": "Cedric Diggory",
+        "species": "human",
+        "gender": "male",
+        "house": "Hufflepuff",
+        "dateOfBirth": "",
+        "yearOfBirth": 1977,
+        "ancestry": "",
+        "eyeColour": "grey",
+        "hairColour": "brown",
+        "wand": {
+            "wood": "ash",
+            "core": "unicorn hair",
+            "length": 12.25
+        },
+        "patronus": "",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Robert Pattinson",
+        "alive": false,
+        "image": "http://hp-api.herokuapp.com/images/cedric.png"
+    },
+    {
+        "name": "Cho Chang",
+        "species": "human",
+        "gender": "female",
+        "house": "Ravenclaw",
+        "dateOfBirth": "",
+        "yearOfBirth": "",
+        "ancestry": "",
+        "eyeColour": "brown",
+        "hairColour": "black",
+        "wand": {
+            "wood": "",
+            "core": "",
+            "length": ""
+        },
+        "patronus": "swan",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Katie Leung",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/cho.jpg"
+    },
+    {
+        "name": "Neville Longbottom",
+        "species": "human",
+        "gender": "male",
+        "house": "Gryffindor",
+        "dateOfBirth": "30-07-1980",
+        "yearOfBirth": 1980,
+        "ancestry": "pure-blood",
+        "eyeColour": "",
+        "hairColour": "blonde",
+        "wand": {
+            "wood": "cherry",
+            "core": "unicorn tail-hair",
+            "length": 13
+        },
+        "patronus": "",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Matthew Lewis",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/neville.jpg"
+    },
+    {
+        "name": "Luna Lovegood",
+        "species": "human",
+        "gender": "female",
+        "house": "Ravenclaw",
+        "dateOfBirth": "13-02-1981",
+        "yearOfBirth": 1981,
+        "ancestry": "",
+        "eyeColour": "grey",
+        "hairColour": "blonde",
+        "wand": {
+            "wood": "",
+            "core": "",
+            "length": ""
+        },
+        "patronus": "hare",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Evanna Lynch",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/luna.jpg"
+    },
+    {
+        "name": "Ginny Weasley",
+        "species": "human",
+        "gender": "female",
+        "house": "Gryffindor",
+        "dateOfBirth": "11-08-1981",
+        "yearOfBirth": 1981,
+        "ancestry": "pure-blood",
+        "eyeColour": "brown",
+        "hairColour": "red",
+        "wand": {
+            "wood": "yew",
+            "core": "",
+            "length": ""
+        },
+        "patronus": "horse",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Bonnie Wright",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/ginny.jpg"
+    },
+    {
+        "name": "Vincent Crabbe",
+        "species": "human",
+        "gender": "male",
+        "house": "Slytherin",
+        "dateOfBirth": "",
+        "yearOfBirth": "",
+        "ancestry": "pure-blood",
+        "eyeColour": "black",
+        "hairColour": "black",
+        "wand": {
+            "wood": "",
+            "core": "",
+            "length": ""
+        },
+        "patronus": "",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Jamie Waylett",
+        "alive": false,
+        "image": "http://hp-api.herokuapp.com/images/crabbe.jpg"
+    },
+    {
+        "name": "Gregory Goyle",
+        "species": "human",
+        "gender": "male",
+        "house": "Slytherin",
+        "dateOfBirth": "",
+        "yearOfBirth": "",
+        "ancestry": "pure-blood",
+        "eyeColour": "",
+        "hairColour": "brown",
+        "wand": {
+            "wood": "",
+            "core": "",
+            "length": ""
+        },
+        "patronus": "",
+        "hogwartsStudent": true,
+        "hogwartsStaff": false,
+        "actor": "Josh Herdman",
+        "alive": true,
+        "image": "http://hp-api.herokuapp.com/images/goyle.jpg"
+    }
+];
+
+export const UPDATE_FAVOURITE = 'UPDATE_FAVOURITE';
