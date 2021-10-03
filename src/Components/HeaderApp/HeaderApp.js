@@ -51,7 +51,7 @@ const HeaderApp = ({ data, updateData, eventAddCharacter, list }) => {
                         {
                             favouriteListCharacters.map(character =>
                                 <div className="item" key={`fav_${character.id}`}>
-                                    <img className="photo" src={character.image} alt="photo" />
+                                    <img className="photo" src={character.image} alt="pht" />
                                     <label>{character.name}</label>
                                     <img className="icon" src={deleteImage} onClick={() => deleteFavourite(character.id)} alt="icon" />
                                 </div>

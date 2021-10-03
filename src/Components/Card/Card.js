@@ -70,7 +70,7 @@ const Card = ({ data, updateData, detailObject }) => {
         <div className="card-container">
             <div className="card">
                 <div className={`image ${houseColour}`}>
-                    <img src={image} alt="photo" />
+                    <img src={image} alt="pht" />
                 </div>
                 <div className={`detail ${alive ? 'back-a' : 'back-f'}`}>
                     <div className="title">
