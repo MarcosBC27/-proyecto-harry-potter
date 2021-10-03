@@ -1,3 +1,6 @@
+@import '../../resources//sass/colurs.scss';
+@import '../../resources/sass/functions.scss';
+
 .filters-container{
     display: flex;
     width: 100%;
@@ -9,5 +12,15 @@
         display: flex;
         width: 100%;
         justify-content: space-around;
+    }
+
+    & .title{
+        color:$color-white;
+        font-size: convertPixelsToV(35,680,1vh);
+    }
+
+    & img{
+        width: convertPixelsToV(200);
+        height: convertPixelsToV(100);
     }
 }

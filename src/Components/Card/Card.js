@@ -1,33 +1,81 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { UPDATE_FAVOURITE } from '../../data/types';
 import favouriteIcon from '../../resources/images/favourite.svg';
 import preFavouriteIcon from '../../resources/images/preFavourite.svg';
 import './Card.scss';
 
-const Card = ({ detailObject }) => {
-    const { image,
+const Card = ({ data, updateData, detailObject }) => {
+    const {
+        id,
+        image,
         house,
         alive,
         hogwartsStudent,
-        hogwartsStaff,
-        isFavourite,
         name,
         dateOfBirth,
         gender,
         eyeColour,
         hairColour } = detailObject;
+    let houseColour = '';
+
+    switch (house) {
+        case "Gryffindor":
+            houseColour = 'back-gf';
+            break;
+        case "Slytherin":
+            houseColour = 'back-sy';
+            break;
+        case "Hufflepuff":
+            houseColour = 'back-hu';
+            break;
+        case "Ravenclaw":
+            houseColour = 'back-ra';
+            break;
+        default:
+            break;
+    }
 
 
+    const [stateIsFavourite, setStateIsFavourite] = useState(false);
+
+    const addFavourite = idUpdate => {
+        const numberOfFavourite = data.favouriteList.length;
+        const validateObject = data.favouriteList.find(element => element === idUpdate);
+        if (numberOfFavourite < 5 && typeof (validateObject) === 'undefined') {
+
+            const updObject = {
+                type: UPDATE_FAVOURITE,
+                data: {
+                    favouriteList: [
+                        ...data.favouriteList,
+                        idUpdate,
+                    ],
+                },
+            };
+
+            updateData(updObject);
+        }
+    };
+
+    useEffect(() => {
+
+        const favouriteObject = data.favouriteList.find(idItem => idItem === id);
+        setStateIsFavourite(typeof (favouriteObject) !== 'undefined');
+
+    }, [data.favouriteList]);
 
     return (
         <div className="card-container">
             <div className="card">
-                <div className="image">
+                <div className={`image ${houseColour}`}>
                     <img src={image} />
                 </div>
-                <div className="detail">
+                <div className={`detail ${alive ? 'back-a' : 'back-f'}`}>
                     <div className="title">
-                        <label>{`${alive ? 'VIVO' : 'FINADO'}/${hogwartsStudent ? 'ESTUDIANTE':'STAFF'}`}</label>
-                        <img src={preFavouriteIcon} />
+                        <label>{`${alive ? 'VIVO' : 'FINADO'}/${hogwartsStudent ? 'ESTUDIANTE' : 'STAFF'}`}</label>
+                        <img src={stateIsFavourite ? favouriteIcon : preFavouriteIcon} onClick={() => addFavourite(id)} />
                     </div>
                     <div className="name">
                         {name}
@@ -42,4 +90,23 @@ const Card = ({ detailObject }) => {
     );
 };
 
-export default Card;
+const mapStateToProps = (state, ownProps) => (
+    {
+        data: {
+            favouriteList: state.favouriteList,
+        },
+        props: ownProps,
+    });
+
+const mapDispatchToProps = dispatch => ({
+    updateData(data) {
+        dispatch(data);
+    },
+});
+
+Card.propTypes = {
+    detailObject: PropTypes.object.isRequired,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card)
+

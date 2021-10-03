@@ -1,0 +1,87 @@
+@import '../../resources/sass/colurs.scss';
+@import '../../resources/sass/functions.scss';
+
+.add-container{
+    display: flex;
+    font-size: convertPixelsToV(12,680,1vh);
+    width:convertPixelsToV(900);
+    flex-direction: column;
+
+    & .form-container{
+        display: flex;
+        flex-wrap: wrap;
+
+        & .cell{
+            display: flex;
+            width: 50%;
+            justify-content: space-evenly;
+            margin-top: convertPixelsToV(20,680,1vh);
+
+            & img{
+                cursor: pointer;
+                width: convertPixelsToV(17);
+                height: convertPixelsToV(17);
+                margin-left: convertPixelsToV(90);
+            }
+
+            & .field{
+                display: flex;
+                flex-direction: column;
+
+                & input[type=text]{
+                    height: convertPixelsToV(45,680,1vh);
+                }
+
+                & .row-radios{
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+
+        & .row-button{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        & p{
+            color: red;
+        }
+
+        & .button-form{
+        
+            border: convertPixelsToV(2) solid $color-purple;
+            color: $color-white;
+            padding: convertPixelsToV(16) convertPixelsToV(32);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: convertPixelsToV(12,680,1vh);
+            margin: convertPixelsToV(4) convertPixelsToV(2);
+            transition-duration: 0.4s;
+            cursor: pointer;
+    
+            &.active{
+              background-color: $color-purple; 
+            }
+    
+            &.inactive{
+              background-color: $color-dark-gray;
+            }
+    
+            &.active:hover{
+                background-color: $color-light-purple;
+                color: white;
+            }
+    
+            &.inactive:hover{
+              background-color: $color-light-purple;
+              color: white;
+          }
+    
+        }
+
+        
+    }
+}

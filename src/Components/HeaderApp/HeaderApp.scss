@@ -1,3 +1,6 @@
+@import '../../resources//sass//colurs.scss';
+@import '../../resources/sass/functions.scss';
+
 .header-container {
   display: flex;
   width: 100%;
@@ -6,4 +9,76 @@
   justify-content: end;
   align-items: center;
 
+  & .dropbtn {
+    background-color:$color-light-purple;
+    color: white;
+    padding: convertPixelsToV(10);
+    font-size: convertPixelsToV(12,680,1vh);
+    border: none;
+    cursor: pointer;
+    border-radius: 7%;
+    width: convertPixelsToV(125);;
+  }
+
+  & .right-m{
+    margin-right: convertPixelsToV(1);
+  }
+
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  & .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $color-light-purple;
+    min-width: convertPixelsToV(200);
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    & .item{
+      display: flex;
+      width: 100%;
+      color: $color-white;
+      border: convertPixelsToV(1) solid $color-purple;
+      padding: convertPixelsToV(5);
+      text-decoration: none;
+      display: block;
+      font-size: convertPixelsToV(7,680,1vh);
+      
+
+      & img{
+        width: convertPixelsToV(30);
+        height: convertPixelsToV(30);
+        margin-left: convertPixelsToV(10);
+        margin-right: convertPixelsToV(10);
+      }
+
+      & .photo{
+        border-radius: 50%;
+      }
+
+      & .icon{
+        cursor: pointer;
+      }
+    }
+    
+    & .item:hover {background-color: $color-purple;}
+
+  }
+  
+  & .show {display: block;}
+
+}
+
+
+
+
+
+
+
+
+
