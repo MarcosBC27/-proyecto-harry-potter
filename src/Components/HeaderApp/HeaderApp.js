@@ -45,7 +45,7 @@ const HeaderApp = ({ data, updateData, eventAddCharacter, list }) => {
         <div className="header-container">
             <div className="right-m">
                 <div className="dropdown">
-                    <button onClick={executeShow} className="dropbtn">Dropdown</button>
+                    <button onClick={executeShow} className="dropbtn">Favoritos</button>
                     <div ref={dropReference} className="dropdown-content">
                         {
                             favouriteListCharacters.map((character, index) =>

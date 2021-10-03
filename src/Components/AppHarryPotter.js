@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Filters from './Filters/Filters';
-import HeaderApp from './HeaderApp/HeaderApp';
-import Results from './Results/Results';
 import { Provider } from 'react-redux';
 import store from '../data/storage';
-import ReactModal from 'react-modal';
+import Filters from './Filters/Filters';
+import Results from './Results/Results';
+import HeaderApp from './HeaderApp/HeaderApp';
 import '../resources/sass/AppHarryPotter.scss';
+import Modal from 'react-modal';
+import AddForm from './AddForm/AddForm';
 
 const AppHarryPotter = () => {
 
@@ -14,6 +15,19 @@ const AppHarryPotter = () => {
     const [stateSearchType, setStateSearchType] = useState(1);
     const [stateAddCharacter, setStateAddCharacter] = useState(false);
     const urlApi = 'https://my-json-server.typicode.com/MarcosBC27/proyecto-harry-potter-api/';
+
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+        },
+    };
+
+    Modal.setAppElement('#root');
 
     const getData = async () => {
         fetch(`${urlApi}hpCharacters`)
@@ -52,22 +66,15 @@ const AppHarryPotter = () => {
                     list={stateFilteredList}
                 />
             </div>
-            <ReactModal
+            <Modal
                 isOpen={stateAddCharacter}
-                closeTimeoutMS={0}
-                style={{ overlay: {}, content: {} }}
-                contentLabel={"Example Modal"}
-                className={"ReactModal__Content"}
-                bodyOpenClassName={"ReactModal__Body--open"}
-                shouldCloseOnEsc={false}
-                shouldReturnFocusAfterClose={true}
-                role={"dialog"}
-                preventScroll={false}
-                parentSelector={() => document.body}
-                testId={""}
+                style={customStyles}
+                contentLabel="Example Modal"
             >
-                <p>Modal Content</p>
-            </ReactModal>
+                <AddForm 
+                    eventCloseModal={setStateAddCharacter}
+                />
+            </Modal>
         </Provider>
     );
 };
