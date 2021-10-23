@@ -33,13 +33,20 @@ const AppHarryPotter = () => {
     Modal.setAppElement('#root');
 
     const getData = async () => {
-        fetch(`${urlApi}hpCharacters`)
-            .then((resp) => resp.json())
-            .then((data) => {
-                setStateCharacterList(data);
-            })
-            .catch((e) => console.log(e))
-            .catch((e) => console.log(e));
+        try {
+            const responseData = await fetch(`${urlApi}hpCharacters`);
+            const jsonData = await responseData.json();
+            setStateCharacterList(jsonData);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const eventCloseModal = characterAdded => {
+        if (characterAdded) {
+            getData();
+        }
+        setStateAddCharacter(!stateAddCharacter);
     };
 
     useEffect(() => {
@@ -87,7 +94,8 @@ const AppHarryPotter = () => {
                 contentLabel="Example Modal"
             >
                 <AddForm
-                    eventCloseModal={setStateAddCharacter}
+                    eventCloseModal={eventCloseModal}
+                    newId={typeof (stateCharacterList.at(-1)) !== 'undefined' ? (stateCharacterList.at(-1).id) + 1 : 0}
                 />
             </Modal>
         </Provider>

@@ -6,7 +6,7 @@ import './AddForm.scss';
 import { urlApi } from '../../data/types';
 
 
-const AddForm = ({ eventCloseModal }) => {
+const AddForm = ({ eventCloseModal, newId }) => {
 
     const {
         register,
@@ -14,10 +14,10 @@ const AddForm = ({ eventCloseModal }) => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
 
         const newCharacter = {
-            "id": 26,
+            "id": newId,
             "image": "http://hp-api.herokuapp.com/images/harry.jpg",
             "house": "Gryffindor",
             "alive": true,
@@ -29,7 +29,6 @@ const AddForm = ({ eventCloseModal }) => {
             "hairColour": data.hairColour,
         };
 
-        console.log('newCharacter', newCharacter);
 
         fetch(`${urlApi}hpCharacters`, {
             method: "POST",
@@ -37,9 +36,13 @@ const AddForm = ({ eventCloseModal }) => {
             headers: { "Content-type": "application/json; charset=UTF-8" }
         })
             .then(response => {
-                console.log("respuesta POST", response);
-                response.json();
-                eventCloseModal(false);
+                if (response.status === 201) {
+                    eventCloseModal(true);
+                } else {
+                    console.log('Error al crear');
+                    eventCloseModal(false);
+                }
+
             })
             .catch((e) => console.log(e));
     };
@@ -117,6 +120,7 @@ const AddForm = ({ eventCloseModal }) => {
 
 AddForm.propTypes = {
     eventCloseModal: PropTypes.func.isRequired,
+    newId: PropTypes.number.isRequired,
 };
 
 export default AddForm;
