@@ -8,6 +8,7 @@ import '../resources/sass/AppHarryPotter.scss';
 import Modal from 'react-modal';
 import AddForm from './AddForm/AddForm';
 import { urlApi } from '../data/types';
+import useWindowDimensions from '../customHooks/useWindowDimensions';
 
 const AppHarryPotter = () => {
 
@@ -15,7 +16,8 @@ const AppHarryPotter = () => {
     const [stateFilteredList, setStateFilteredList] = useState([]);
     const [stateSearchType, setStateSearchType] = useState(1);
     const [stateAddCharacter, setStateAddCharacter] = useState(false);
-    
+    const { width } = useWindowDimensions();
+
 
     const customStyles = {
         content: {
@@ -55,10 +57,14 @@ const AppHarryPotter = () => {
     return (
         <Provider store={store}>
             <div className="main-container">
-                <HeaderApp
-                    eventAddCharacter={setStateAddCharacter}
-                    list={stateCharacterList}
-                />
+                {
+                    (width > 600) &&
+                    <HeaderApp
+                        eventAddCharacter={setStateAddCharacter}
+                        list={stateCharacterList}
+                    />
+                }
+
                 <Filters
                     searchType={stateSearchType}
                     eventChangeSearchType={setStateSearchType}
@@ -66,13 +72,21 @@ const AppHarryPotter = () => {
                 <Results
                     list={stateFilteredList}
                 />
+
+                {
+                    (width <= 600) &&
+                    <HeaderApp
+                        eventAddCharacter={setStateAddCharacter}
+                        list={stateCharacterList}
+                    />
+                }
             </div>
             <Modal
                 isOpen={stateAddCharacter}
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <AddForm 
+                <AddForm
                     eventCloseModal={setStateAddCharacter}
                 />
             </Modal>

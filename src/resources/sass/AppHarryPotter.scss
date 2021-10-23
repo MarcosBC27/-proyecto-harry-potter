@@ -1,55 +1,90 @@
-@import './colurs.scss';
-@import './functions.scss';
+@import "./colurs.scss";
+@import "./functions.scss";
+@import "./variables.scss";
 
 * {
-    box-sizing: border-box; 
-  }
-  
-  body{
-    background-image: url(../images/backgroundHW.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-    background-size: cover;
-  }
+  box-sizing: border-box;
+}
 
-  .main-container {
-    display: flex;
-    height: 100%;
-    min-height: 100vh;
-    flex-direction: column;
-    margin: 1em 5em 1em 5em;
-    align-items: center;
+body {
+  background-image: url(../images/backgroundHW.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
-    & .button{
-        
-        border: convertPixelsToV(2) solid $color-purple;
-        color: $color-white;
-        padding: convertPixelsToV(16) convertPixelsToV(32);
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: convertPixelsToV(12,680,1vh);
-        margin: convertPixelsToV(4) convertPixelsToV(2);
-        transition-duration: 0.4s;
-        cursor: pointer;
+.main-container {
+  display: flex;
+  height: 100%;
+  min-height: convertPixelsToV(800);
+  flex-direction: column;
+  margin: 0 50px 20px 50px;
+  align-items: center;
 
-        &.active{
-          background-color: $color-purple; 
-        }
+  & .button {
+    width: 135px;
+    height: 45px;
+    border: 2px solid $color-purple;
+    padding: 8px 16px;
+    font-size: 12px;
+    margin: 4px 2px;
+    color: $color-white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 
-        &.inactive{
-          background-color: $color-dark-gray;
-        }
+    transition-duration: 0.4s;
+    cursor: pointer;
 
-        &.active:hover{
-            background-color: $color-light-purple;
-            color: white;
-        }
+    &.active {
+      background-color: $color-purple;
+    }
 
-        &.inactive:hover{
-          background-color: $color-light-purple;
-          color: white;
-      }
+    &.inactive {
+      background-color: $color-dark-gray;
+    }
 
+    &.active:hover {
+      background-color: $color-light-purple;
+      color: white;
+    }
+
+    &.inactive:hover {
+      background-color: $color-light-purple;
+      color: white;
     }
   }
+}
+
+/* Estilos para TABLET  */
+@media only screen and (max-width: 1024px) and (hover: hover) {
+  .main-container {
+    margin: 0 convertPixelsToV(50) convertPixelsToV(20) convertPixelsToV(50);
+
+    & .button {
+      width: convertPixelsToV(135);
+      height: convertPixelsToV(45);
+      border: convertPixelsToV(2) solid $color-purple;
+      padding: convertPixelsToV(8) convertPixelsToV(16);
+      font-size: convertPixelsToV(12);
+      margin: convertPixelsToV(4) convertPixelsToV(2);
+    }
+  }
+}
+
+/* Estilos para movil  */
+@media only screen and (max-width: 600px) and (hover: none)  {
+  .main-container {
+    margin: convertPixelsToV(5, $movile-resolution) convertPixelsToV(10, $movile-resolution)
+      convertPixelsToV(5, $movile-resolution) convertPixelsToV(10, $movile-resolution);
+
+    & .button {
+      height: convertPixelsToV(45, $movile-resolution);
+      width: convertPixelsToV(135, $movile-resolution);
+      border: convertPixelsToV(2, $movile-resolution) solid $color-purple;
+      padding: convertPixelsToV(8, $movile-resolution) convertPixelsToV(16, $movile-resolution);
+      font-size: convertPixelsToV(12, $movile-resolution);
+      margin: convertPixelsToV(4, $movile-resolution) convertPixelsToV(2, $movile-resolution);
+    }
+  }
+}

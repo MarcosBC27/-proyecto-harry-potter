@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import { UPDATE_FAVOURITE } from '../../data/types';
 import favouriteIcon from '../../resources/images/favourite.svg';
 import preFavouriteIcon from '../../resources/images/preFavourite.svg';
+import useWindowDimensions from '../../customHooks/useWindowDimensions';
 import './Card.scss';
+
 
 const Card = ({ data, updateData, detailObject }) => {
     const {
@@ -39,6 +41,7 @@ const Card = ({ data, updateData, detailObject }) => {
 
 
     const [stateIsFavourite, setStateIsFavourite] = useState(false);
+    const { height, width } = useWindowDimensions ();
 
     const addFavourite = idUpdate => {
         const numberOfFavourite = data.favouriteList.length;
@@ -64,7 +67,7 @@ const Card = ({ data, updateData, detailObject }) => {
         const favouriteObject = data.favouriteList.find(idItem => idItem === id);
         setStateIsFavourite(typeof (favouriteObject) !== 'undefined');
 
-    }, [data.favouriteList,id]);
+    }, [data.favouriteList, id]);
 
     return (
         <div className="card-container">
@@ -73,17 +76,36 @@ const Card = ({ data, updateData, detailObject }) => {
                     <img src={image} alt="pht" />
                 </div>
                 <div className={`detail ${alive ? 'back-a' : 'back-f'}`}>
-                    <div className="title">
-                        <label>{`${alive ? 'VIVO' : 'FINADO'}/${hogwartsStudent ? 'ESTUDIANTE' : 'STAFF'}`}</label>
-                        <img src={stateIsFavourite ? favouriteIcon : preFavouriteIcon} onClick={() => addFavourite(id)} alt="icon" />
-                    </div>
-                    <div className="name">
-                        {name}
-                    </div>
-                    <label><strong>Cumplea&ntilde;os: </strong>{dateOfBirth}</label>
-                    <label><strong>G&eacute;nero: </strong>{gender}</label>
-                    <label><strong>Color de ojos: </strong>{eyeColour}</label>
-                    <label><strong>Color de pelo: </strong>{hairColour}</label>
+                    {
+                        (width > 600 && height > 600) ?
+                            <>
+                                <div className="title">
+                                    <div>{`${alive ? 'VIVO' : 'FINADO'}/${hogwartsStudent ? 'ESTUDIANTE' : 'STAFF'}`}</div>
+                                    <img src={stateIsFavourite ? favouriteIcon : preFavouriteIcon} onClick={() => addFavourite(id)} alt="icon" />
+                                </div>
+                                <div className="name">
+                                    {name}
+                                </div>
+                                <label><strong>Cumplea&ntilde;os: </strong>{dateOfBirth}</label>
+                                <label><strong>G&eacute;nero: </strong>{gender}</label>
+                                <label><strong>Color de ojos: </strong>{eyeColour}</label>
+                                <label><strong>Color de pelo: </strong>{hairColour}</label>
+                            </>
+                            :
+                            <>
+                                <div className="name">
+                                    {name}
+                                </div>
+                                <div className="title">
+                                    <div>{`${alive ? 'VIVO' : 'FINADO'}/${hogwartsStudent ? 'ESTUDIANTE' : 'STAFF'}`}</div>
+                                    <img src={stateIsFavourite ? favouriteIcon : preFavouriteIcon} onClick={() => addFavourite(id)} alt="icon" />
+                                </div>
+
+                            </>
+
+                    }
+
+
                 </div>
             </div>
         </div>
