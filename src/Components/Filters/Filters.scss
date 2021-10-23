@@ -1,26 +1,77 @@
-@import '../../resources//sass/colurs.scss';
-@import '../../resources/sass/functions.scss';
+@import "../../resources//sass/colurs.scss";
+@import "../../resources/sass/functions.scss";
+@import "../../resources/sass/variables.scss";
 
-.filters-container{
+.filters-container {
     display: flex;
     width: 100%;
     flex-direction: column;
-    margin: 0.5em;
+    margin: 10px;
+
     align-items: center;
 
-    & .actions{
+    & .actions {
         display: flex;
         width: 100%;
-        justify-content: space-around;
+        justify-content: center;
+        & button {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
     }
 
-    & .title{
-        color:$color-white;
-        font-size: convertPixelsToV(35,680,1vh);
+    & .title {
+        color: $color-white;
+        font-size: 35px;
     }
 
-    & img{
-        width: convertPixelsToV(200);
-        height: convertPixelsToV(100);
+    & img {
+        width: 200px;
+        height: 100px;
+    }
+}
+
+/* Estilos para TABLET  */
+@media only screen and (max-width: 1024px) and (hover: hover) {
+    .filters-container {
+        margin: convertPixelsToV(10);
+
+        & .actions {
+            & button {
+                margin-right: convertPixelsToV(10);
+                margin-left: convertPixelsToV(10);
+            }
+        }
+
+        & .title {
+            font-size: convertPixelsToV(35);
+        }
+
+        & img {
+            width: convertPixelsToV(200);
+            height: convertPixelsToV(100);
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) and (hover: none)  {
+    .filters-container {
+        margin: convertPixelsToV(10, $movile-resolution);
+
+        & .actions {
+            & button {
+                margin-right: convertPixelsToV(10, $movile-resolution);
+                margin-left: convertPixelsToV(10, $movile-resolution);
+            }
+        }
+
+        & .title {
+            font-size: convertPixelsToV(35, $movile-resolution);
+        }
+
+        & img {
+            width: convertPixelsToV(200, $movile-resolution);
+            height: convertPixelsToV(100, $movile-resolution);
+        }
     }
 }

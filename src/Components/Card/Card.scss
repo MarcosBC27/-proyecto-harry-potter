@@ -1,88 +1,182 @@
-@import '../../resources/sass/functions.scss';
-@import '../../resources//sass/colurs.scss';
+@import "../../resources/sass/functions.scss";
+@import "../../resources//sass/colurs.scss";
+@import "../../resources/sass/variables.scss";
 
-.card-container{
+.card-container {
     display: flex;
     width: 50%;
     justify-content: space-evenly;
-    margin-top: convertPixelsToV(10,680,1vh);
-    
+    margin-top: 10px;
 
-    & .card{
+    & .card {
         display: flex;
         flex-wrap: wrap;
         border-radius: 5%;
-        font-size:convertPixelsToV(12,680,1vh);
+        font-size: 12px;
         background-color: $color-white;
-        width: convertPixelsToV(500);
-        height: convertPixelsToV(175,680,1vh);
+        width: 350px;
+        height: 140px;
 
-        & .image{
+        & .image {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             width: 40%;
             border-radius: 5% 0 0 5%;
-            & img{
-                width: convertPixelsToV(130);
-                height: convertPixelsToV(130);
+            & img {
+                width: 90px;
+                height: 90px;
                 border-radius: 50%;
             }
         }
 
-        & .back-gf{
-            background-image: linear-gradient(to bottom right,  #C23309 , #F3AB96);
+        & .back-gf {
+            background-image: linear-gradient(to bottom right, #c23309, #f3ab96);
         }
 
-        & .back-sy{
-            background-image: linear-gradient(to bottom right, #087F22 , #7CE994);
+        & .back-sy {
+            background-image: linear-gradient(to bottom right, #087f22, #7ce994);
         }
 
-        & .back-hu{
-            background-image: linear-gradient(to bottom right, #D4EA10 , #E4F356);
+        & .back-hu {
+            background-image: linear-gradient(to bottom right, #d4ea10, #e4f356);
         }
 
-        & .back-ra{
-            background-image: linear-gradient(to bottom right, #107CAA , #50BDE5);
+        & .back-ra {
+            background-image: linear-gradient(to bottom right, #107caa, #50bde5);
         }
 
-        & .detail{
+        & .detail {
             display: flex;
             flex-direction: column;
-            margin-top: convertPixelsToV(5,680,1vh);
+            margin-top: 5px;
             width: 60%;
             border-radius: 0 5% 5% 0;
 
-            &.back-f{
+            &.back-f {
                 background-color: $color-light-gray;
-                margin-top:0;
+                margin-top: 0;
             }
 
-            &.back-a{
+            &.back-a {
                 background-color: $color-white;
             }
-            
-            & .title{
+
+            & .title {
                 display: flex;
                 justify-content: space-between;
                 color: $color-gray;
-                margin-left: convertPixelsToV(5);
+                margin-left: 5px;
 
-                & img{
-                    width: convertPixelsToV(17);
-                    height: convertPixelsToV(17);
-                    margin-right: convertPixelsToV(16);
+                & img {
+                    width: 17px;
+                    height: 17px;
+                    margin-right: 16px;
                 }
             }
 
-            & .name{
-                margin-top: convertPixelsToV(10,680,1vh);
-                margin-bottom: convertPixelsToV(10,680,1vh);
-                font-size: convertPixelsToV(20,680,1vh);
-                margin-left: convertPixelsToV(5);
+            & .name {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-size: 20px;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+/* Estilos para TABLET  */
+@media only screen and (max-width: 1024px) and (hover: hover) {
+    .card-container {
+        
+        margin-top: convertPixelsToV(10);
+
+        & .card {
+            font-size: convertPixelsToV(12);
+            width: convertPixelsToV(350);
+            height: convertPixelsToV(140);
+
+            & .image {
+                & img {
+                    width: convertPixelsToV(90);
+                    height: convertPixelsToV(90);
+                }
             }
 
+            & .detail {
+                margin-top: convertPixelsToV(5);
+
+                & .title {
+                    margin-left: convertPixelsToV(5);
+
+                    & img {
+                        width: convertPixelsToV(17);
+                        height: convertPixelsToV(17);
+                        margin-right: convertPixelsToV(16);
+                    }
+                }
+
+                & .name {
+                    margin-top: convertPixelsToV(10);
+                    margin-bottom: convertPixelsToV(10);
+                    font-size: convertPixelsToV(20);
+                    margin-left: convertPixelsToV(5);
+                }
+            }
+        }
+    }
+}
+
+/*Estilos para moviles*/
+@media only screen and (max-width: 600px) and (hover: none)  {
+    .card-container {
+        margin-top: convertPixelsToV(10, $movile-resolution);
+
+        & .card {
+            flex-direction: column;
+            font-size: convertPixelsToV(12, $movile-resolution);
+            width: convertPixelsToV(275, $movile-resolution);
+            height: convertPixelsToV(200, $movile-resolution);
+
+            & .image {
+                width: 100%;
+                & img {
+                    width: convertPixelsToV(90, $movile-resolution);
+                    height: convertPixelsToV(90, $movile-resolution);
+                }
+            }
+
+            & .detail {
+                margin-top: convertPixelsToV(5, $movile-resolution);
+                flex-direction: column;
+                width: 100%;
+
+                & label{
+                    display: none;
+                }
+
+                & .name {
+                    display: flex;
+                    margin-top: convertPixelsToV(10, $movile-resolution);
+                    margin-bottom: convertPixelsToV(10, $movile-resolution);
+                    font-size: convertPixelsToV(20, $movile-resolution);
+                    margin-left: convertPixelsToV(5, $movile-resolution);
+                    justify-content: center;
+                }
+
+                & .title {
+                    font-size: convertPixelsToV(17, $movile-resolution);
+                    margin-left: convertPixelsToV(5, $movile-resolution);
+                    justify-content: space-around;
+
+                    & img {
+                        width: convertPixelsToV(30, $movile-resolution);
+                        height: convertPixelsToV(30, $movile-resolution);
+                        margin-right: convertPixelsToV(16, $movile-resolution);
+                    }
+                }
+            }
         }
     }
 }
