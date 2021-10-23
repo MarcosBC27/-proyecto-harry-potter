@@ -9,7 +9,7 @@
 /* Estilos para movil  */
 @media only screen and (max-width: 600px) and (hover: none) {
   .results-container {
-    height: convertPixelsToV(780, $movile-resolution);
+    height: convertPixelsToV(730, $movile-resolution);
     overflow-y: scroll;
   }
 }
